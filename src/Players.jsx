@@ -9,7 +9,7 @@ export default function Players({ selectedPlayer, onSelect, onDelete }) {
 
   return (
     <section className="w-11/12 mx-auto">
-      <div className="pt-4 flex justify-between items-center pb-4">
+      <div className="pt-4 flex justify-between items-center pb-4 ">
         {isAvailable ? (
           <h1 className="font-bold">Available Players</h1>
         ) : (
@@ -17,15 +17,15 @@ export default function Players({ selectedPlayer, onSelect, onDelete }) {
             Selected Players: {selectedPlayer.length}/6
           </h1>
         )}
-        <div className="flex border rounded-lg">
+        <div className="flex border rounded-2xl ">
           <p
-            className={`p-2 ${isAvailable ? "bg-[#E7FE29]" : "bg-gray-300"}`}
+            className={`p-2 ${isAvailable ? "bg-[#E7FE29]" : "bg-gray-300"} rounded-l-2xl`}
             onClick={() => setIsAvailable(true)}
           >
             Available
           </p>
           <p
-            className={`p-2 ${!isAvailable ? "bg-[#E7FE29]" : "bg-gray-300"}`}
+            className={`p-2 ${!isAvailable ? "bg-[#E7FE29]" : "bg-gray-300"} rounded-r-2xl`}
             onClick={() => setIsAvailable(false)}
           >
             Selected({selectedPlayer.length})
