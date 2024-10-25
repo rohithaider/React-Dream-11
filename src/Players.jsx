@@ -1,6 +1,9 @@
+import { getPlayersData } from "./data/data";
 import PlayerCard from "./PlayerCard";
 
 export default function Players(){
+    const players = getPlayersData();
+    console.log(players)
     return (
        <section className="w-11/12 mx-auto">
          <div className=" pt-4 flex justify-between items-center pb-4">
@@ -11,12 +14,11 @@ export default function Players(){
             </div>
         </div>
         <div className=" border-red-500 grid grid-cols-3 gap-5">
-            <PlayerCard/>
-            <PlayerCard/>
-            <PlayerCard/>
-            <PlayerCard/>
-            <PlayerCard/>
-            <PlayerCard/>
+            {
+                players.map((player)=>(
+                    <PlayerCard key={player.id} player={player}/>
+                ))
+            }
 
         </div>
        </section>
