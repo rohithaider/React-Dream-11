@@ -1,36 +1,36 @@
 const data=[
     {
-      "playerId": 1,
+      "id": 1,
       "name": "Virat Kohli",
       "country": "India",
       "image": "virat-kohli.png",
       "role": "Batsman",
       "battingType": "Right-handed",
-      "bowlingType": "N/A",
+      "bowlingType": "Not Available",
       "biddingPrice": 1500000
     },
     {
-      "playerId": 2,
+      "id": 2,
       "name": "Babar Azam",
       "country": "Pakistan",
       "image": "babar-azam.png",
       "role": "Batsman",
       "battingType": "Right-handed",
-      "bowlingType": "N/A",
+      "bowlingType": "Not Available",
       "biddingPrice": 1200000
     },
     {
-      "playerId": 3,
+      "id": 3,
       "name": "Steve Smith",
       "country": "Australia",
       "image": "steve-smith.png",
       "role": "Batsman",
       "battingType": "Right-handed",
-      "bowlingType": "N/A",
+      "bowlingType": "Not Available",
       "biddingPrice": 1300000
     },
     {
-      "playerId": 4,
+      "id": 4,
       "name": "Jasprit Bumrah",
       "country": "India",
       "image": "jasprit-bumrah.png",
@@ -40,17 +40,17 @@ const data=[
       "biddingPrice": 1400000
     },
     {
-      "playerId": 5,
+      "id": 5,
       "name": "Kane Williamson",
       "country": "New Zealand",
       "image": "kane-williamson.png",
       "role": "Batsman",
       "battingType": "Right-handed",
-      "bowlingType": "N/A",
+      "bowlingType": "Not Available",
       "biddingPrice": 1250000
     },
     {
-      "playerId": 6,
+      "id": 6,
       "name": "Ben Stokes",
       "country": "England",
       "image": "ben-stokes.png",
@@ -60,7 +60,7 @@ const data=[
       "biddingPrice": 1600000
     },
     {
-      "playerId": 7,
+      "id": 7,
       "name": "Rashid Khan",
       "country": "Afghanistan",
       "image": "rashid-khan.png",
@@ -70,13 +70,13 @@ const data=[
       "biddingPrice": 1100000
     },
     {
-      "playerId": 8,
+      "id": 8,
       "name": "David Warner",
       "country": "Australia",
       "image": "david-warner.png",
       "role": "Batsman",
       "battingType": "Left-handed",
-      "bowlingType": "N/A",
+      "bowlingType": "Not Available",
       "biddingPrice": 1400000
     }
   ]

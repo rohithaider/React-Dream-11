@@ -2,9 +2,9 @@ import Virat from "./assets/players-images/virat-kohli.png";
 import Profile from "../assets/profile.png";
 import Flag from '../assets/flag.png'
 import { getImgUrl } from "./utils/utility";
-export default function PlayerCard({player}) {
+export default function PlayerCard({player,onSelect}) {
   return (
-    <div className="card bg-base-100 w-[340] shadow-xl border">
+    <div className="card bg-base-100 w-[340] shadow-xl">
       <figure className="px-10 pt-10 w-96 h-96 ">
         <img src={getImgUrl(player.image)} alt="Shoes" className="rounded-xl object-cover w-full h-full" />
       </figure>
@@ -19,7 +19,7 @@ export default function PlayerCard({player}) {
           <p>{player.country}</p>
 
         </div>
-        <p className="bg-gray-100 p-2 rounded-lg">All-Rounder</p>
+        <p className="bg-gray-100 p-2  rounded-lg text-center ">{player.role}</p>
 
         </div>
         <hr />
@@ -34,7 +34,7 @@ export default function PlayerCard({player}) {
         </div>
         <div className="flex justify-between items-center">
           <h1>Price:${player.biddingPrice}</h1>
-          <a href="#" className="border p-1 rounded-lg">Choose Player</a>
+          <button href="#" className="border p-1 rounded-lg " onClick={(e)=>onSelect(e,player)}>Choose Player</button>
         </div>
         
         

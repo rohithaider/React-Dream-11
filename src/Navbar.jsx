@@ -1,6 +1,6 @@
 import Coin from "../assets/coin.png";
 import Logo from "../assets/logo.png";
-export default function Navbar() {
+export default function Navbar({balance}) {
   return (
     <div className="w-11/12 mx-auto navbar bg-base-100">
       <div className="navbar-start">
@@ -22,7 +22,7 @@ export default function Navbar() {
           </li>
           <li>
             <div className="border">
-            <p>0 Coin</p>
+            <p>{balance} Coin</p>
             <img src={Coin} alt="" className="w-6 h-6" />
             </div>
           </li>

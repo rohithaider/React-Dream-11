@@ -1,6 +1,6 @@
 import Background from "../assets/bg-shadow.png";
 import BannerImg from "../assets/banner-main.png";
-export default function Banner() {
+export default function Banner({onChange}) {
   return (
     <div
       className="w-11/12 mx-auto hero rounded-3xl bg-black"
@@ -19,7 +19,7 @@ export default function Banner() {
           Beyond Boundaries Beyond Limits
           </p>
           <div className="p-1 bg-black border-2 border-[#E7FE29] rounded-xl">
-          <button className="btn bg-[#E7FE29]">Claim Free Credit</button>
+          <button className="btn bg-[#E7FE29] " onClick={onChange}>Claim Free Credit</button>
           </div>
         </div>
       </div>
