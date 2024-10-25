@@ -3,6 +3,7 @@ import Players from "./Players";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./Footer";
 
 export default function App() {
   const [balance, setBalance] = useState(0);
@@ -73,6 +74,7 @@ export default function App() {
       <main>
         <Players selectedPlayer={selectedPlayer} onSelect={handleSelect} onDelete={handleDelete}/>
       </main>
+      <Footer/>
     </>
   );
 }

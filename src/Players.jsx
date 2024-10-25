@@ -3,7 +3,7 @@ import PlayerCard from "./PlayerCard";
 import { useState } from "react";
 import SelectedPlayers from "./SelectedPlayers";
 
-export default function Players({ selectedPlayer, onSelect ,onDelete}) {
+export default function Players({ selectedPlayer, onSelect, onDelete }) {
   const players = getPlayersData();
   const [isAvailable, setIsAvailable] = useState(true);
 
@@ -13,7 +13,9 @@ export default function Players({ selectedPlayer, onSelect ,onDelete}) {
         {isAvailable ? (
           <h1 className="font-bold">Available Players</h1>
         ) : (
-          <h1 className="font-bold">Selected Players: {selectedPlayer.length}/6</h1>
+          <h1 className="font-bold">
+            Selected Players: {selectedPlayer.length}/6
+          </h1>
         )}
         <div className="flex border  rounded-lg">
           <p
@@ -22,28 +24,39 @@ export default function Players({ selectedPlayer, onSelect ,onDelete}) {
           >
             Available
           </p>
-          <p className={`p-2 ${!isAvailable ? "bg-[#E7FE29]" : "bg-gray-300"}`} onClick={() => setIsAvailable(false)}>
+          <p
+            className={`p-2 ${!isAvailable ? "bg-[#E7FE29]" : "bg-gray-300"}`}
+            onClick={() => setIsAvailable(false)}
+          >
             Selected({selectedPlayer.length})
           </p>
         </div>
       </div>
-      { isAvailable &&  <div className=" border-red-500 grid grid-cols-3 gap-5">
-        {players.map((player) => (
-          <PlayerCard key={player.id} player={player} onSelect={onSelect} />
-        )) }
-        
+      {isAvailable && (
+        <div className=" border-red-500 grid  grid-cols-1  md:grid-cols-3 gap-5">
+          {players.map((player) => (
+            <PlayerCard key={player.id} player={player} onSelect={onSelect} />
+          ))}
+        </div>
+      )}
 
-      </div>}
-      
-
-      { ! isAvailable &&  <div className="space-y-4">
-        {selectedPlayer.map((player) => (
-          <SelectedPlayers key={player.id} player={player} onDelete={onDelete} />
-        )) }
-        <button className="btn bg-[#E7FE29] mt-5 " onClick={()=>setIsAvailable(true)} >Add More Players</button>
-        
-
-      </div>}
+      {!isAvailable && (
+        <div className="space-y-4">
+          {selectedPlayer.map((player) => (
+            <SelectedPlayers
+              key={player.id}
+              player={player}
+              onDelete={onDelete}
+            />
+          ))}
+          <button
+            className="btn bg-[#E7FE29] mt-5 "
+            onClick={() => setIsAvailable(true)}
+          >
+            Add More Players
+          </button>
+        </div>
+      )}
     </section>
   );
 }
