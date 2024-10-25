@@ -4,7 +4,7 @@ import Flag from '../assets/flag.png'
 import { getImgUrl } from "./utils/utility";
 export default function PlayerCard({player,onSelect}) {
   return (
-    <div className="card bg-base-100 w-[100] shadow-xl">
+    <div className="card bg-base-100 w-[100] shadow-xl border">
       <figure className="px-10 pt-10 max-w-full h-96 ">
         <img src={getImgUrl(player.image)} alt="Shoes" className="rounded-2xl border object-cover w-full h-full" />
       </figure>
