@@ -34,7 +34,7 @@ export default function PlayerCard({player,onSelect}) {
         </div>
         <div className="flex justify-between items-center">
           <h1>Price:${player.biddingPrice}</h1>
-          <button href="#" className="border p-1 rounded-lg " onClick={(e)=>onSelect(e,player)}>Choose Player</button>
+          <button href="#" className="btn btn-outline btn-success  p-2 rounded-lg " onClick={(e)=>onSelect(e,player)}>Choose Player</button>
         </div>
         
         
