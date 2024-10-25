@@ -1,4 +1,3 @@
-import Virat from "./assets/players-images/virat-kohli.png";
 import Profile from "../assets/profile.png";
 import Flag from '../assets/flag.png'
 import { getImgUrl } from "./utils/utility";

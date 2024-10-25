@@ -30,6 +30,9 @@ export default function App() {
     toast.error(`Only six players can be selected`,{position: "top-right"});
   }
 
+  function remove(player) {
+    toast.warning(`${player.name} is Deleted!`,{position: "bottom-right"});
+  }
 
 
   function handleSelect(e,player){
@@ -63,6 +66,7 @@ export default function App() {
   function handleDelete(deletedPlayer){
     const filteredIPlayers = selectedPlayer.filter((player)=>(player.id!==deletedPlayer.id))
     setSelectedPlayer([...filteredIPlayers])
+    remove(deletedPlayer)
     
   }
   
