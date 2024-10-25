@@ -1,8 +1,11 @@
+import Banner from "./Banner";
 import Navbar from "./Navbar";
 
-export default function Header(){
-    return (
-        <Navbar/>
-        
-    );
+export default function Header() {
+  return (
+    <>
+      <Navbar />
+      <Banner />
+    </>
+  );
 }
