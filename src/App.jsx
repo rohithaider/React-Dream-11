@@ -37,7 +37,7 @@ export default function App() {
       return  item.id === player.id
      });
 
-     if(balance ===0){
+     if(balance ===0 || player.biddingPrice>balance ){
       errorBalance();
       return;
      }
@@ -58,6 +58,12 @@ export default function App() {
     
 
   }
+
+  function handleDelete(deletedPlayer){
+    const filteredIPlayers = selectedPlayer.filter((player)=>(player.id!==deletedPlayer.id))
+    setSelectedPlayer([...filteredIPlayers])
+    
+  }
   
 
   return (
@@ -65,7 +71,7 @@ export default function App() {
       <ToastContainer position="top-center"/>
       <Header balance={balance} onChange={handleClick} />
       <main>
-        <Players selectedPlayer={selectedPlayer} onSelect={handleSelect}/>
+        <Players selectedPlayer={selectedPlayer} onSelect={handleSelect} onDelete={handleDelete}/>
       </main>
     </>
   );
