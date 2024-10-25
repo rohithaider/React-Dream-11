@@ -9,7 +9,7 @@ export default function Players({ selectedPlayer, onSelect, onDelete }) {
 
   return (
     <section className="w-11/12 mx-auto">
-      <div className=" pt-4 flex justify-between items-center pb-4">
+      <div className="pt-4 flex justify-between items-center pb-4">
         {isAvailable ? (
           <h1 className="font-bold">Available Players</h1>
         ) : (
@@ -17,7 +17,7 @@ export default function Players({ selectedPlayer, onSelect, onDelete }) {
             Selected Players: {selectedPlayer.length}/6
           </h1>
         )}
-        <div className="flex border  rounded-lg">
+        <div className="flex border rounded-lg">
           <p
             className={`p-2 ${isAvailable ? "bg-[#E7FE29]" : "bg-gray-300"}`}
             onClick={() => setIsAvailable(true)}
@@ -32,8 +32,9 @@ export default function Players({ selectedPlayer, onSelect, onDelete }) {
           </p>
         </div>
       </div>
+
       {isAvailable && (
-        <div className=" border-red-500 grid  grid-cols-1  md:grid-cols-3 gap-5">
+        <div className="border-red-500 grid grid-cols-1 md:grid-cols-3 gap-5">
           {players.map((player) => (
             <PlayerCard key={player.id} player={player} onSelect={onSelect} />
           ))}
@@ -42,18 +43,22 @@ export default function Players({ selectedPlayer, onSelect, onDelete }) {
 
       {!isAvailable && (
         <div className="space-y-4">
-          {selectedPlayer.map((player) => (
-            <SelectedPlayers
-              key={player.id}
-              player={player}
-              onDelete={onDelete}
-            />
-          ))}
+          {selectedPlayer.length === 0 ? (
+            <p className="text-center font-bold text-orange-600 text-3xl">No players have been selected. Click on Add More bellow for adding players. </p>
+          ) : (
+            selectedPlayer.map((player) => (
+              <SelectedPlayers
+                key={player.id}
+                player={player}
+                onDelete={onDelete}
+              />
+            ))
+          )}
           <button
-            className="btn bg-[#E7FE29] mt-5 "
+            className="btn bg-[#E7FE29] mt-5"
             onClick={() => setIsAvailable(true)}
           >
-            Add More Players
+            Add More
           </button>
         </div>
       )}
